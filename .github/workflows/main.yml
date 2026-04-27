@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-24.04
 
     steps:
@@ -13,3 +13,6 @@ jobs:
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
+      
+      - name: Build and push
+        uses: docker/build-push-action@v7
